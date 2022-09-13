@@ -1,0 +1,122 @@
+/*******************BODY*******************************/
+body {
+    display: grid;
+    grid-template-areas: 
+        "nav header header"
+        "nav cards trending";
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 4fr;
+}
+/*******************HEADER*******************************/
+.header {
+    grid-area: header;
+    background-color: coral;
+    display: grid;
+    grid-template-areas: 
+    "top-left right"
+    "bottom-left right";
+}
+
+.header-search {
+    grid-area: top-left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+input#search {
+    flex: 1;
+}
+
+.header-account-greeting {
+    grid-area: bottom-left;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.greeting-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+p#greeting {
+    margin: 0;
+}
+
+.header-account-info {
+    grid-area: right;
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-account {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.header-account-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/*******************NAV*******************************/
+.sidebar {
+    display: grid;
+    grid-area: nav;
+    background-color: aqua;
+    grid-template-areas: 
+        "nav-title"
+        "main-links"
+        "second-links";
+}
+
+nav li {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+}
+
+.nav-title{
+    grid-area: nav-title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-links {
+    grid-area: main-links;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.secondary-links {
+    grid-area: second-links;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/*******************MAIN*******************************/
+.cards {
+    grid-area: cards;
+    background-color: beige;
+}
+
+
+/*******************TRENDING*******************************/
+.trending {
+    grid-area: trending;
+    background-color: beige;
+}
