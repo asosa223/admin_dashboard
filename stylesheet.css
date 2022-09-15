@@ -7,7 +7,7 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 4fr;
 }
 /*******************HEADER*******************************/
@@ -109,14 +109,51 @@ nav li {
 }
 
 /*******************MAIN*******************************/
-.cards {
-    grid-area: cards;
+main {
     background-color: beige;
 }
 
+.cards {
+    grid-area: cards;
+    display: grid;
+    grid-template-areas: 
+        "1 2"
+        "3 4"
+        "5 6";
+    gap: 1rem;
+    margin: 1rem;
+    background-color: lightgray;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-icons {
+    display: flex;
+    justify-content: flex-end;
+}
 
 /*******************TRENDING*******************************/
-.trending {
+.right-section {
     grid-area: trending;
     background-color: beige;
+    display: grid;
+    grid-template-areas: 
+        "title-1"
+        "card-1"
+        "title-2"
+        "card-2";
+    grid-template-rows: repeat(4, auto);
+}
+
+.right-card-two-account {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.right-card-two p {
+    margin: 0;
 }
