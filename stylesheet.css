@@ -1,3 +1,14 @@
+/*
+*   Steps left:
+    *   add input styling ✅
+    *   add font style
+    *   style links ✅
+    *   add account images
+    *   edit color theme ✅
+    *   add hover to card icons
+    *
+*/
+
 /*******************BODY*******************************/
 body {
     display: grid;
@@ -7,17 +18,30 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 1fr 4fr;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 /*******************HEADER*******************************/
 .header {
     grid-area: header;
-    background-color: coral;
+    background-color: white;
     display: grid;
     grid-template-areas: 
-    "top-left right"
-    "bottom-left right";
+        "top-left right"
+        "bottom-left right";
+    grid-template-columns: 2fr 1fr;
+}
+
+.header p {
+    font-weight: bold;
 }
 
 .header-search {
@@ -30,6 +54,14 @@ body {
 
 input#search {
     flex: 1;
+    background-color: #EBEBEB;
+    border-radius: 40px;
+    border: none;
+    padding: 8px;
+}
+
+input#search:focus {
+    outline: none;
 }
 
 .header-account-greeting {
@@ -62,6 +94,7 @@ p#greeting {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    padding: 1rem;
 }
 
 .header-account-buttons {
@@ -70,17 +103,31 @@ p#greeting {
     gap: 1rem;
 }
 
+.header-account-buttons button {
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #4E6E5D;
+    color: #f8f8ff;
+}
+
+.header-account-buttons button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
 /*******************NAV*******************************/
 .sidebar {
     display: grid;
     grid-area: nav;
-    background-color: aqua;
+    background-color: #4E6E5D;
     grid-template-areas: 
         "nav-title"
         "main-links"
         "second-links";
-    grid-template-rows: 1fr 3fr 2fr;
+    grid-template-rows: 10rem 20rem 20rem;
 }
+
 
 nav li {
     display: flex;
@@ -95,11 +142,24 @@ li a {
     text-decoration: none;
 }
 
+a:visited {
+    color: white;
+}
+
+a:hover {
+    transform: translateY(4px);
+}
+
+.filter-color {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(320deg) brightness(104%) contrast(102%);
+}
+
 .nav-title{
     grid-area: nav-title;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .main-links {
@@ -118,7 +178,12 @@ li a {
 
 /*******************MAIN*******************************/
 main {
-    background-color: beige;
+    background-color: #EBEBEB;
+}
+
+p#card-header {
+    padding: 0rem 2rem;
+    font-weight: bold;
 }
 
 .cards {
@@ -143,17 +208,27 @@ main {
     gap: 1rem;
 }
 
+p.card-title {
+    font-weight: bold;
+}
+
 .cards > div {
     background: white;
     padding: 2rem;
     margin: 1rem;
-    box-shadow: 10px 10px 6px -1px rgba(235,235,235,0.75);
+    box-shadow: rgba(235, 235, 235, 0.75) 10px 10px 6px -1px;
+    border-left: 6px solid red;
+    border-radius: 6px;
+}
+
+.cards > div:hover {
+    transform: translateY(4px);
 }
 
 /*******************TRENDING*******************************/
 .right-section {
     grid-area: trending;
-    background-color: beige;
+    background-color: #EBEBEB;
     display: grid;
     grid-template-areas: 
         "title-1"
@@ -163,10 +238,23 @@ main {
     grid-template-rows: repeat(4, auto);
 }
 
+p#announcements {
+    padding: 0rem 1rem;
+    font-weight: bold;
+}
+
+p.right-card-header {
+    font-weight: bold;
+}
+
 .right-card-two-account {
     display: flex;
     align-items: center;
     padding: 1rem;
+}
+
+.right-card-one > p {
+    font-size: 14px;
 }
 
 .right-card-two p {
